@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Museum Puzzle</string>
+    <string name="normal">Normál</string>
+    <string name="easy">Könnyített</string>
+    <string name="choose_hardnes">Válaszd ki a nehézségi szintet!</string>
+    <string name="gratulations">Gratulálok, megnyerted a játékot.</string>
+    <string name="gratulations_on_puzzle">Gratulálok, sikerült kiraknod a puzzlet.</string>
+    <string name="click_to_skip">Kattints a továbblépéshez.</string>
+    <string name="without_code_check_other_app">(ha nincs ilyen kódod, töltsd le az alkalmazást, és gyűjtsd össze az összes szőtesdarabot)</string>
+    <string name="please_type_the_code">Kérlek írd be a 6 jegyű kódot, amit a Kútakodj alkalmazás adott</string>
+    <string name="wrong_code">(A beírt kód nem a játék álltal generált, biztos helyesen írtad be a kódot?)</string>
+</resources>

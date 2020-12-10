@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/landingFragment">
+    <fragment
+        android:id="@+id/landingFragment"
+        android:name="hu.szakdolgozat.puzzle.ui.landing.LandingFragment"
+        android:label="LandingFragment">
+        <action
+            android:id="@+id/action_landingFragment_to_difficultyPickerFragment"
+            app:destination="@id/difficultyPickerFragment"
+            app:enterAnim="@anim/slide_in_to_left"
+            app:exitAnim="@anim/slide_out_to_left"
+            app:popEnterAnim="@anim/slide_in_to_right"
+            app:popExitAnim="@anim/slide_out_to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/difficultyPickerFragment"
+        android:name="hu.szakdolgozat.puzzle.ui.difficultypicker.DifficultyPickerFragment"
+        android:label="DifficultyPickerFragment">
+        <argument
+            android:name="userId"
+            android:defaultValue="-1" />
+        <action
+            android:id="@+id/action_difficultyPickerFragment_to_puzzleFragment_easyMode"
+            app:destination="@id/puzzleFragment"
+            app:enterAnim="@anim/slide_in_to_left"
+            app:exitAnim="@anim/slide_out_to_left"
+            app:popEnterAnim="@anim/slide_in_to_right"
+            app:popExitAnim="@anim/slide_out_to_right"
+            app:popUpTo="@id/landingFragment"/>
+        <action
+            android:id="@+id/action_difficultyPickerFragment_to_puzzleFragment_normalMode"
+            app:destination="@id/puzzleFragment"
+            app:enterAnim="@anim/slide_in_to_right"
+            app:exitAnim="@anim/slide_out_to_right"
+            app:popEnterAnim="@anim/slide_in_to_left"
+            app:popExitAnim="@anim/slide_out_to_left"
+            app:popUpTo="@id/landingFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/endScreenFragment"
+        android:name="hu.szakdolgozat.puzzle.ui.endscreen.EndScreenFragment"
+        android:label="EndScreenFragment" >
+        <argument
+            android:name="userId"
+            android:defaultValue="-1" />
+        <action
+            android:id="@+id/action_endScreenFragment_to_landingFragment"
+            app:destination="@id/landingFragment"
+            app:enterAnim="@anim/slide_in_to_right"
+            app:exitAnim="@anim/slide_out_to_right"
+            app:popEnterAnim="@anim/slide_in_to_left"
+            app:popExitAnim="@anim/slide_out_to_left"
+            app:popUpTo="@id/landingFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/gratulationsFragment"
+        android:name="hu.szakdolgozat.puzzle.ui.gratulations.GratulationsFragment"
+        android:label="GratulationsFragment">
+
+        <argument
+            android:name="userId"
+            android:defaultValue="-1" />
+        <action
+            android:id="@+id/action_gratulationsFragment_to_endScreenFragment"
+            app:destination="@id/endScreenFragment"
+            app:enterAnim="@anim/slide_in_to_left"
+            app:exitAnim="@anim/slide_out_to_left"
+            app:popEnterAnim="@anim/slide_in_to_right"
+            app:popExitAnim="@anim/slide_out_to_right"
+            app:popUpTo="@id/landingFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/puzzleFragment"
+        android:name="hu.szakdolgozat.puzzle.ui.puzzle.PuzzleFragment"
+        android:label="PuzzleFragment">
+        <argument
+            android:name="isEasy"
+            android:defaultValue="false" />
+        <argument
+            android:name="userId"
+            android:defaultValue="-1" />
+        <action
+            android:id="@+id/action_puzzleFragment_to_gratulationsFragment"
+            app:destination="@id/gratulationsFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@anim/stay_still"
+            app:popEnterAnim="@anim/stay_still"
+            app:popExitAnim="@android:anim/fade_out"
+            app:popUpTo="@id/landingFragment"/>
+    </fragment>
+</navigation>
